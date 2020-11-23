@@ -1,6 +1,6 @@
 # google-abo-revoker
 
-### Small (Kotlin) program to 'revoke' active subscriptions on the Google PlayStore
+### Small Kotlin program to 'cancel' active subscriptions on the Google PlayStore
 
 Subscriptions means subscriptions made via Google Play In App Billing
 
