@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/reimburser.iml" filepath="$PROJECT_DIR$/.idea/modules/reimburser.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/reimburser_main.iml" filepath="$PROJECT_DIR$/.idea/modules/reimburser_main.iml" group="reimburser" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/reimburser_test.iml" filepath="$PROJECT_DIR$/.idea/modules/reimburser_test.iml" group="reimburser" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/reimburser.main.iml" filepath="$PROJECT_DIR$/.idea/modules/reimburser.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/reimburser.test.iml" filepath="$PROJECT_DIR$/.idea/modules/reimburser.test.iml" />
     </modules>
   </component>
 </project>
