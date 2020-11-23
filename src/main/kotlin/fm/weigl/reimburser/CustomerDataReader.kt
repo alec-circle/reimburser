@@ -26,6 +26,12 @@ class SubscriptionDataFileReader(private val logger: Logger) {
         val subscriptionDataList = mutableListOf<CustomerData>()
 
         val dataResource = javaClass.classLoader.getResource(Values.CUSTOMER_DATA_PATH)
+
+        if (dataResource == null) {
+            logger.log(tag, "ERROR: customer data resource null")
+            return subscriptionDataList
+        }
+
         val dataFile = File(dataResource.file)
 
         dataFile.readLines().forEachIndexed { index, line ->

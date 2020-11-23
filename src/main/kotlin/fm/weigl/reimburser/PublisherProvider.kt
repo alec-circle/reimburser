@@ -32,8 +32,8 @@ class PublisherProvider(private val logger: Logger) {
         val credential = createCredential(serviceAccountEmail)
 
         return AndroidPublisher.Builder(httpTansport, jsonFactory, credential)
-                .setApplicationName(applicationName)
-                .build()
+            .setApplicationName(applicationName)
+            .build()
 
     }
 
@@ -44,10 +44,10 @@ class PublisherProvider(private val logger: Logger) {
         val p12File = File(p12Resource.file)
 
         val credential = GoogleCredential.Builder()
-                .setTransport(httpTansport).setJsonFactory(jsonFactory)
-                .setServiceAccountId(serviceAccountEmail)
-                .setServiceAccountScopes(setOf(AndroidPublisherScopes.ANDROIDPUBLISHER))
-                .setServiceAccountPrivateKeyFromP12File(p12File).build()
+            .setTransport(httpTansport).setJsonFactory(jsonFactory)
+            .setServiceAccountId(serviceAccountEmail)
+            .setServiceAccountScopes(setOf(AndroidPublisherScopes.ANDROIDPUBLISHER))
+            .setServiceAccountPrivateKeyFromP12File(p12File).build()
 
         return credential
 

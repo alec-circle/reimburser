@@ -14,17 +14,15 @@ class FileLogger {
     fun logToFile(text: String) {
 
         try {
-            FileWriter(Values.Companion.LOG_PATH, true).use({ fw ->
-                BufferedWriter(fw).use({ bw ->
-                    PrintWriter(bw).use({ out ->
+            FileWriter(Values.LOG_PATH, true).use { fw ->
+                BufferedWriter(fw).use { bw ->
+                    PrintWriter(bw).use { out ->
                         out.println(text)
-                    })
-                })
-            })
+                    }
+                }
+            }
         } catch (e: IOException) {
             println(e.toString())
         }
-
     }
-
 }

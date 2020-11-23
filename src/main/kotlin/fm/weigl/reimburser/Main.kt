@@ -8,16 +8,15 @@ class Main {
 
     companion object {
 
-        @JvmStatic fun main(args: Array<String>) {
-
+        @JvmStatic
+        fun main(args: Array<String>) {
             val fileLogger = FileLogger()
             val logger = Logger(fileLogger)
             val publisherProvider = PublisherProvider(logger)
             val fileReader = SubscriptionDataFileReader(logger)
-            val revoker = SubscriptionRevoker(publisherProvider, fileReader, logger)
+            val canceller = SubscriptionCanceller(publisherProvider, fileReader, logger)
 
-            revoker.revokeSubscriptions()
-
+            canceller.cancelSubscriptions()
         }
     }
 }
