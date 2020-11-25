@@ -11,10 +11,10 @@ import java.io.PrintWriter
 
 class FileLogger {
 
-    fun logToFile(text: String) {
+    fun logToFile(text: String, path: String = Values.LOG_PATH) {
 
         try {
-            FileWriter(Values.LOG_PATH, true).use { fw ->
+            FileWriter(path, true).use { fw ->
                 BufferedWriter(fw).use { bw ->
                     PrintWriter(bw).use { out ->
                         out.println(text)

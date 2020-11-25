@@ -21,6 +21,25 @@ class SubscriptionDataFileReader(private val logger: Logger) {
         val SEMICOLON = ";"
     }
 
+    fun readReceiptsFromFile() {
+        val dataResource = javaClass.classLoader.getResource(Values.RECEIPT_PATH)
+
+        val dataFile = File(dataResource.file)
+
+        dataFile.readLines().forEachIndexed { index, line ->
+
+            try {
+                val lineItems = line.split('\t')
+                val receiptEntry = "${lineItems[1]},${lineItems[2]}"
+                FileLogger().logToFile(receiptEntry, Values.GO_RECEIPTS_PATH)
+
+            } catch(e: Exception) {
+                logger.log("TAG", "error reading line $index $e")
+            }
+
+        }
+    }
+
     fun readCustomerDataFromFile(): List<CustomerData> {
 
         val subscriptionDataList = mutableListOf<CustomerData>()
